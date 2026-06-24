@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(New-Item -ItemType Directory -Force -Path \"c:\\\\Users\\\\Krishna\\\\Downloads\\\\KuberNeTits\\\\backend\\\\app\\\\models\")",
+      "Bash(Out-Null)",
+      "Bash(New-Item -ItemType Directory -Force -Path \"c:\\\\Users\\\\Krishna\\\\Downloads\\\\KuberNeTits\\\\backend\\\\app\\\\api\")",
+      "Bash(New-Item -ItemType Directory -Force -Path \"c:\\\\Users\\\\Krishna\\\\Downloads\\\\KuberNeTits\\\\backend\\\\app\\\\parsers\")",
+      "Bash(New-Item -ItemType Directory -Force -Path \"c:\\\\Users\\\\Krishna\\\\Downloads\\\\KuberNeTits\\\\backend\\\\app\\\\inference\")",
+      "Bash(New-Item -ItemType Directory -Force -Path \"c:\\\\Users\\\\Krishna\\\\Downloads\\\\KuberNeTits\\\\backend\\\\app\\\\validators\\\\rules\")",
+      "Bash(New-Item -ItemType Directory -Force -Path \"c:\\\\Users\\\\Krishna\\\\Downloads\\\\KuberNeTits\\\\backend\\\\app\\\\generators\")",
+      "Bash(New-Item -ItemType Directory -Force -Path \"c:\\\\Users\\\\Krishna\\\\Downloads\\\\KuberNeTits\\\\backend\\\\app\\\\export\")",
+      "Bash(New-Item -ItemType Directory -Force -Path \"c:\\\\Users\\\\Krishna\\\\Downloads\\\\KuberNeTits\\\\backend\\\\tests\")",
+      "Bash(New-Item -ItemType Directory -Force -Path \"c:\\\\Users\\\\Krishna\\\\Downloads\\\\KuberNeTits\\\\frontend\\\\src\\\\components\\\\ui\")",
+      "Bash(New-Item -ItemType Directory -Force -Path \"c:\\\\Users\\\\Krishna\\\\Downloads\\\\KuberNeTits\\\\frontend\\\\src\\\\pages\")",
+      "Bash(New-Item -ItemType Directory -Force -Path \"c:\\\\Users\\\\Krishna\\\\Downloads\\\\KuberNeTits\\\\frontend\\\\src\\\\hooks\")",
+      "Bash(New-Item -ItemType Directory -Force -Path \"c:\\\\Users\\\\Krishna\\\\Downloads\\\\KuberNeTits\\\\frontend\\\\src\\\\stores\")",
+      "Bash(New-Item -ItemType Directory -Force -Path \"c:\\\\Users\\\\Krishna\\\\Downloads\\\\KuberNeTits\\\\frontend\\\\src\\\\api\")",
+      "Bash(New-Item -ItemType Directory -Force -Path \"c:\\\\Users\\\\Krishna\\\\Downloads\\\\KuberNeTits\\\\frontend\\\\src\\\\types\")",
+      "Bash(New-Item -ItemType Directory -Force -Path \"c:\\\\Users\\\\Krishna\\\\Downloads\\\\KuberNeTits\\\\frontend\\\\public\")",
+      "Bash(New-Item -ItemType Directory -Force -Path \"c:\\\\Users\\\\Krishna\\\\Downloads\\\\KuberNeTits\\\\docs\")",
+      "Bash(Write-Host \"Directories created\")"
+    ]
+  }
+}

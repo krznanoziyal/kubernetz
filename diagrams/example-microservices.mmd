@@ -1,0 +1,40 @@
+graph TD
+    internet((Internet))
+
+    subgraph cluster[EKS Cluster - us-east-1]
+        ingress[nginx ingress controller]
+
+        subgraph default[default namespace]
+            api[api-server Deployment]
+            auth[auth-service Deployment]
+            notif[notification-service Deployment]
+            db[(postgres StatefulSet)]
+            redis[(redis StatefulSet)]
+            kafka[(kafka StatefulSet)]
+        end
+
+        subgraph monitoring[monitoring namespace]
+            prom[prometheus Deployment]
+            grafana[grafana Deployment]
+            loki[(loki StatefulSet)]
+            alertmgr[alertmanager Deployment]
+        end
+    end
+
+    s3[AWS S3 - media storage]
+    rds[AWS RDS - backup replica]
+
+    internet -->|HTTPS| ingress
+    ingress --> api
+    api -->|auth check| auth
+    api -->|SQL| db
+    api -->|cache| redis
+    api -->|publish events| kafka
+    notif -->|consume events| kafka
+    notif -->|email| s3
+    db -.->|replicate| rds
+    prom --> grafana
+    prom --> alertmgr
+    prom -.->|scrape| api
+    prom -.->|scrape| auth
+    loki -.->|logs| grafana

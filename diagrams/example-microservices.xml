@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <!-- Internet -->
+    <mxCell id="internet" value="Internet" style="shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+      <mxGeometry x="760" y="40" width="120" height="80" as="geometry" />
+    </mxCell>
+
+    <!-- EKS Cluster -->
+    <mxCell id="cluster-1" value="EKS Cluster (us-east-1)" style="swimlane;dashed=1;dashPattern=8 8;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+      <mxGeometry x="80" y="180" width="1480" height="820" as="geometry" />
+    </mxCell>
+
+    <!-- Nginx Ingress Controller -->
+    <mxCell id="ingress-1" value="nginx ingress controller" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7B68EE;fontColor=#ffffff;strokeColor=#5A4FCF;" vertex="1" parent="cluster-1">
+      <mxGeometry x="640" y="40" width="200" height="60" as="geometry" />
+    </mxCell>
+
+    <!-- default namespace -->
+    <mxCell id="ns-default" value="default namespace" style="swimlane;dashed=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" vertex="1" parent="cluster-1">
+      <mxGeometry x="40" y="140" width="700" height="440" as="geometry" />
+    </mxCell>
+
+    <!-- api-server deployment -->
+    <mxCell id="api-1" value="api-server&#xa;Deployment" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4472C4;fontColor=#ffffff;strokeColor=#2F5496;" vertex="1" parent="ns-default">
+      <mxGeometry x="60" y="60" width="160" height="80" as="geometry" />
+    </mxCell>
+
+    <!-- auth-service deployment -->
+    <mxCell id="auth-1" value="auth-service&#xa;Deployment" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4472C4;fontColor=#ffffff;strokeColor=#2F5496;" vertex="1" parent="ns-default">
+      <mxGeometry x="280" y="60" width="160" height="80" as="geometry" />
+    </mxCell>
+
+    <!-- notification-service -->
+    <mxCell id="notif-1" value="notification-service&#xa;Deployment" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4472C4;fontColor=#ffffff;strokeColor=#2F5496;" vertex="1" parent="ns-default">
+      <mxGeometry x="500" y="60" width="160" height="80" as="geometry" />
+    </mxCell>
+
+    <!-- postgres StatefulSet -->
+    <mxCell id="pg-1" value="postgres&#xa;StatefulSet" style="shape=cylinder;whiteSpace=wrap;html=1;fillColor=#E6821E;fontColor=#ffffff;strokeColor=#AE4132;" vertex="1" parent="ns-default">
+      <mxGeometry x="60" y="220" width="120" height="80" as="geometry" />
+    </mxCell>
+
+    <!-- redis StatefulSet -->
+    <mxCell id="redis-1" value="redis&#xa;StatefulSet" style="shape=cylinder;whiteSpace=wrap;html=1;fillColor=#E6821E;fontColor=#ffffff;strokeColor=#AE4132;" vertex="1" parent="ns-default">
+      <mxGeometry x="240" y="220" width="120" height="80" as="geometry" />
+    </mxCell>
+
+    <!-- kafka StatefulSet -->
+    <mxCell id="kafka-1" value="kafka&#xa;StatefulSet" style="shape=cylinder;whiteSpace=wrap;html=1;fillColor=#E6821E;fontColor=#ffffff;strokeColor=#AE4132;" vertex="1" parent="ns-default">
+      <mxGeometry x="420" y="220" width="120" height="80" as="geometry" />
+    </mxCell>
+
+    <!-- monitoring namespace -->
+    <mxCell id="ns-monitoring" value="monitoring namespace" style="swimlane;dashed=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;" vertex="1" parent="cluster-1">
+      <mxGeometry x="800" y="140" width="620" height="440" as="geometry" />
+    </mxCell>
+
+    <!-- prometheus -->
+    <mxCell id="prom-1" value="prometheus&#xa;Deployment" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6535C;fontColor=#ffffff;strokeColor=#CC2936;" vertex="1" parent="ns-monitoring">
+      <mxGeometry x="40" y="60" width="160" height="80" as="geometry" />
+    </mxCell>
+
+    <!-- grafana -->
+    <mxCell id="grafana-1" value="grafana&#xa;Deployment" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6535C;fontColor=#ffffff;strokeColor=#CC2936;" vertex="1" parent="ns-monitoring">
+      <mxGeometry x="240" y="60" width="160" height="80" as="geometry" />
+    </mxCell>
+
+    <!-- loki -->
+    <mxCell id="loki-1" value="loki&#xa;StatefulSet" style="shape=cylinder;whiteSpace=wrap;html=1;fillColor=#E6535C;fontColor=#ffffff;strokeColor=#CC2936;" vertex="1" parent="ns-monitoring">
+      <mxGeometry x="440" y="60" width="120" height="80" as="geometry" />
+    </mxCell>
+
+    <!-- alertmanager -->
+    <mxCell id="alertmanager-1" value="alertmanager&#xa;Deployment" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6535C;fontColor=#ffffff;strokeColor=#CC2936;" vertex="1" parent="ns-monitoring">
+      <mxGeometry x="140" y="220" width="160" height="80" as="geometry" />
+    </mxCell>
+
+    <!-- AWS S3 cloud resource -->
+    <mxCell id="s3-1" value="AWS S3&#xa;(media storage)" style="shape=cloud;whiteSpace=wrap;html=1;fillColor=#FF9900;fontColor=#ffffff;strokeColor=#CC7A00;" vertex="1" parent="1">
+      <mxGeometry x="1320" y="600" width="160" height="100" as="geometry" />
+    </mxCell>
+
+    <!-- AWS RDS -->
+    <mxCell id="rds-1" value="AWS RDS&#xa;(backup replica)" style="shape=cloud;whiteSpace=wrap;html=1;fillColor=#FF9900;fontColor=#ffffff;strokeColor=#CC7A00;" vertex="1" parent="1">
+      <mxGeometry x="1320" y="740" width="160" height="100" as="geometry" />
+    </mxCell>
+
+    <!-- Edges -->
+    <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;" source="internet" target="ingress-1" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;" source="ingress-1" target="api-1" parent="1" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e3" value="auth check" style="edgeStyle=orthogonalEdgeStyle;" source="api-1" target="auth-1" parent="ns-default" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e4" value="SQL" style="edgeStyle=orthogonalEdgeStyle;" source="api-1" target="pg-1" parent="ns-default" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e5" value="cache" style="edgeStyle=orthogonalEdgeStyle;" source="api-1" target="redis-1" parent="ns-default" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e6" value="publish events" style="edgeStyle=orthogonalEdgeStyle;" source="api-1" target="kafka-1" parent="ns-default" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e7" value="consume events" style="edgeStyle=orthogonalEdgeStyle;" source="notif-1" target="kafka-1" parent="ns-default" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;" source="prom-1" target="grafana-1" parent="ns-monitoring" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;" source="prom-1" target="alertmanager-1" parent="ns-monitoring" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+  </root>
+</mxGraphModel>
